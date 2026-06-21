@@ -8,6 +8,10 @@
 
 [English](docs/README_EN.md) | 中文 | [日本語](docs/README_JA.md)
 
+## 📘 使用指南
+
+本地部署、Pixi 环境、访问密码、API 调用和停止服务说明见：[GCLI2API 使用指南](docs/USAGE_zh.md)
+
 ## 🚀 快速部署 
 
 [![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/97VMEF?referralCode=sukaka)

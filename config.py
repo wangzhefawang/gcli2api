@@ -7,11 +7,20 @@ Centralizes all configuration to avoid duplication across modules.
 """
 
 import os
+from pathlib import Path
 from typing import Any, Optional
 
 # 全局配置缓存
 _config_cache: dict[str, Any] = {}
 _config_initialized = False
+BASE_DIR = Path(__file__).resolve().parent
+
+
+def _resolve_project_path(path_value: str) -> str:
+    path = Path(path_value)
+    if path.is_absolute():
+        return str(path)
+    return str(BASE_DIR / path)
 
 # Client Configuration
 
@@ -283,7 +292,8 @@ async def get_credentials_dir() -> str:
     Database config key: credentials_dir
     Default: ./creds
     """
-    return str(await get_config_value("credentials_dir", "./creds", "CREDENTIALS_DIR"))
+    credentials_dir = str(await get_config_value("credentials_dir", "./creds", "CREDENTIALS_DIR"))
+    return _resolve_project_path(credentials_dir)
 
 
 async def get_code_assist_endpoint() -> str:

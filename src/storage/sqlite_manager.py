@@ -6,11 +6,21 @@ import asyncio
 import json
 import os
 import time
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 import aiosqlite
 
 from log import log
+
+BASE_DIR = Path(__file__).resolve().parents[2]
+
+
+def _resolve_project_path(path_value: str) -> str:
+    path = Path(path_value)
+    if path.is_absolute():
+        return str(path)
+    return str(BASE_DIR / path)
 
 
 class SQLiteManager:
@@ -82,7 +92,9 @@ class SQLiteManager:
 
             try:
                 # 获取凭证目录
-                self._credentials_dir = os.getenv("CREDENTIALS_DIR", "./creds")
+                self._credentials_dir = _resolve_project_path(
+                    os.getenv("CREDENTIALS_DIR", "./creds")
+                )
                 self._db_path = os.path.join(self._credentials_dir, "credentials.db")
 
                 # 确保目录存在

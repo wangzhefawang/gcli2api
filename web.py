@@ -6,6 +6,7 @@ Main Web Integration - Integrates all routers and modules
 import asyncio
 import os
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
@@ -32,6 +33,8 @@ from src.keeplive import keepalive_service
 
 # 全局凭证管理器
 global_credential_manager = None
+
+BASE_DIR = Path(__file__).resolve().parent
 
 
 @asynccontextmanager
@@ -142,10 +145,10 @@ app.include_router(geminicli_anthropic_router, prefix="", tags=["Geminicli Anthr
 app.include_router(panel_router, prefix="", tags=["Panel Interface"])
 
 # 静态文件路由 - 服务docs目录下的文件
-app.mount("/docs", StaticFiles(directory="docs"), name="docs")
+app.mount("/docs", StaticFiles(directory=BASE_DIR / "docs"), name="docs")
 
 # 静态文件路由 - 服务front目录下的文件（HTML、JS、CSS等）
-app.mount("/front", StaticFiles(directory="front"), name="front")
+app.mount("/front", StaticFiles(directory=BASE_DIR / "front"), name="front")
 
 
 # 保活接口（仅响应 HEAD）

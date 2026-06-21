@@ -54,6 +54,23 @@ asyncio_mode = "auto"
 addopts = [
     "-v",
     "--strict-markers",
+    "--ignore=.pixi",
+    "--ignore=.venv",
+    "--ignore=creds",
+    "--ignore-glob=.pixi/*",
+    "--ignore-glob=.venv/*",
+    "--ignore-glob=creds/*",
+    "--ignore-glob=*/.pixi/*",
+    "--ignore-glob=*/.venv/*",
+]
+norecursedirs = [
+    ".git",
+    ".pixi",
+    ".venv",
+    "__pycache__",
+    "build",
+    "creds",
+    "dist",
 ]
 
 [tool.black]
@@ -101,3 +118,27 @@ exclude_lines = [
     "if __name__ == .__main__.:",
     "if TYPE_CHECKING:",
 ]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+
+[tool.pixi.dependencies]
+python = ">=3.12,<3.14"
+
+[tool.pixi.pypi-dependencies]
+pytest = ">=8.0.0"
+pytest-asyncio = ">=0.23.0"
+pytest-cov = ">=4.1.0"
+black = ">=24.0.0"
+flake8 = ">=7.0.0"
+mypy = ">=1.8.0"
+pre-commit = ">=3.6.0"
+
+[tool.pixi.tasks]
+start = "python web.py"
+dev = "python web.py"
+test = "python -m pytest --rootdir=. tests"
+format = "python -m black ."
+lint = "python -m flake8 ."
+typecheck = "python -m mypy src config.py web.py log.py"

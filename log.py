@@ -8,6 +8,7 @@ import threading
 from datetime import datetime
 from collections import deque
 import atexit
+from pathlib import Path
 
 # 日志级别定义
 LOG_LEVELS = {"debug": 0, "info": 1, "warning": 2, "error": 3, "critical": 4}
@@ -36,6 +37,14 @@ _cached_log_level: int = LOG_LEVELS["info"]
 _cached_log_file: str = "log.txt"
 # ENABLE_LOG=0/false/no/off 时彻底关闭日志
 _log_enabled: bool = True
+BASE_DIR = Path(__file__).resolve().parent
+
+
+def _resolve_log_file_path(log_file: str) -> str:
+    path = Path(log_file)
+    if path.is_absolute():
+        return str(path)
+    return str(BASE_DIR / path)
 
 
 def _refresh_config():
@@ -43,7 +52,7 @@ def _refresh_config():
     global _cached_log_level, _cached_log_file, _log_enabled
     level = os.getenv("LOG_LEVEL", "info").lower()
     _cached_log_level = LOG_LEVELS.get(level, LOG_LEVELS["info"])
-    _cached_log_file = os.getenv("LOG_FILE", "log.txt")
+    _cached_log_file = _resolve_log_file_path(os.getenv("LOG_FILE", "log.txt"))
     _log_enabled = os.getenv("ENABLE_LOG", "1").strip().lower() not in ("0", "false", "no", "off")
 
 
