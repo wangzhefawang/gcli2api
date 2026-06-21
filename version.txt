@@ -1,4 +1,4 @@
-full_hash=689dc539e986a7f4cce1d9439218bc78abc52138
-short_hash=689dc53
-message=反重力缓存
-date=2026-05-21 20:50:15 +0800
+full_hash=15096b5d57b1f642b2e2a4c6261a966890cd7ac2
+short_hash=15096b5
+message=修复对话无法进行的bug
+date=2026-06-21 21:08:15 +0800
