@@ -92,6 +92,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2c/02/3623e6169bed617ed1e2d372f7c69f92ec28d54c4dfc997055c8578ec148/virtualenv-21.5.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/c2/b1/aacc3eb58e8ceee9f86cc097a6a077909b5989ccb95aa3ac877cbdbf7a43/wreq-0.12.0-cp311-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/a4/f5/10b68b7b1544245097b2a1b8238f66f2fc6dcaeb24ba5d917f52bd2eed4f/wsproto-1.3.2-py3-none-any.whl
       osx-64:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/bzip2-1.0.8-h500dc9f_9.conda
@@ -172,6 +173,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2c/02/3623e6169bed617ed1e2d372f7c69f92ec28d54c4dfc997055c8578ec148/virtualenv-21.5.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/fe/c1/1adb13c7e5cbb52fdc21570eada5995a3e94aa1d0c9cb227aeda34bd5fd9/wreq-0.12.0-cp311-abi3-macosx_10_12_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/a4/f5/10b68b7b1544245097b2a1b8238f66f2fc6dcaeb24ba5d917f52bd2eed4f/wsproto-1.3.2-py3-none-any.whl
       osx-arm64:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/bzip2-1.0.8-hd037594_9.conda
@@ -252,6 +254,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2c/02/3623e6169bed617ed1e2d372f7c69f92ec28d54c4dfc997055c8578ec148/virtualenv-21.5.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/f3/2a/99c142d3393213a775536238a1b7baec14b339690b78017655d2c38e8fd7/wreq-0.12.0-cp311-abi3-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/a4/f5/10b68b7b1544245097b2a1b8238f66f2fc6dcaeb24ba5d917f52bd2eed4f/wsproto-1.3.2-py3-none-any.whl
       win-64:
       - conda: https://conda.anaconda.org/conda-forge/win-64/bzip2-1.0.8-h0ad9c76_9.conda
@@ -334,6 +337,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/dc/9b/47798a6c91d8bdb567fe2698fe81e0c6b7cb7ef4d13da4114b41d239f65d/typing_inspection-0.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/2c/02/3623e6169bed617ed1e2d372f7c69f92ec28d54c4dfc997055c8578ec148/virtualenv-21.5.1-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/f6/45/092cfc1aa00c1ef2e63026d6da9f4e7bdffdf41267c1500399384ff114f9/wreq-0.12.0-cp311-abi3-win_amd64.whl
       - pypi: https://files.pythonhosted.org/packages/a4/f5/10b68b7b1544245097b2a1b8238f66f2fc6dcaeb24ba5d917f52bd2eed4f/wsproto-1.3.2-py3-none-any.whl
 packages:
 - conda: https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda
@@ -2081,6 +2085,118 @@ packages:
   - python-discovery>=1.4.2
   - typing-extensions>=4.13.2 ; python_full_version < '3.11'
   requires_python: '>=3.9'
+- pypi: https://files.pythonhosted.org/packages/c2/b1/aacc3eb58e8ceee9f86cc097a6a077909b5989ccb95aa3ac877cbdbf7a43/wreq-0.12.0-cp311-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+  name: wreq
+  version: 0.12.0
+  sha256: 67fc6b7fd146e1c3b8e1b9c571fd03535509ec3bf9d1f983abd064a53250c7b9
+  requires_dist:
+  - pytest ; extra == 'bench'
+  - pyperf ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - niquests ; extra == 'bench'
+  - httpx ; extra == 'bench'
+  - requests ; extra == 'bench'
+  - wreq ; extra == 'bench'
+  - curl-cffi ; extra == 'bench'
+  - aiohttp ; extra == 'bench'
+  - pycurl ; extra == 'bench'
+  - uvicorn ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - typing-extensions ; extra == 'bench'
+  - uvloop ; sys_platform != 'win32' and extra == 'bench'
+  - ry ; extra == 'bench'
+  - zensical ; extra == 'docs'
+  - mkdocs-material>=9.5.0 ; extra == 'docs'
+  - mkdocstrings[python]>=1.0.3 ; extra == 'docs'
+  - mike>=2.0.0 ; extra == 'docs'
+  - pytest ; extra == 'test'
+  - pytest-asyncio ; extra == 'test'
+  - pytest-rerunfailures ; extra == 'test'
+  requires_python: '>=3.11'
+- pypi: https://files.pythonhosted.org/packages/f3/2a/99c142d3393213a775536238a1b7baec14b339690b78017655d2c38e8fd7/wreq-0.12.0-cp311-abi3-macosx_11_0_arm64.whl
+  name: wreq
+  version: 0.12.0
+  sha256: 6c08632e1706d191ba3cb6194abe06256a99c094fade450f2370352d06ee501e
+  requires_dist:
+  - pytest ; extra == 'bench'
+  - pyperf ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - niquests ; extra == 'bench'
+  - httpx ; extra == 'bench'
+  - requests ; extra == 'bench'
+  - wreq ; extra == 'bench'
+  - curl-cffi ; extra == 'bench'
+  - aiohttp ; extra == 'bench'
+  - pycurl ; extra == 'bench'
+  - uvicorn ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - typing-extensions ; extra == 'bench'
+  - uvloop ; sys_platform != 'win32' and extra == 'bench'
+  - ry ; extra == 'bench'
+  - zensical ; extra == 'docs'
+  - mkdocs-material>=9.5.0 ; extra == 'docs'
+  - mkdocstrings[python]>=1.0.3 ; extra == 'docs'
+  - mike>=2.0.0 ; extra == 'docs'
+  - pytest ; extra == 'test'
+  - pytest-asyncio ; extra == 'test'
+  - pytest-rerunfailures ; extra == 'test'
+  requires_python: '>=3.11'
+- pypi: https://files.pythonhosted.org/packages/f6/45/092cfc1aa00c1ef2e63026d6da9f4e7bdffdf41267c1500399384ff114f9/wreq-0.12.0-cp311-abi3-win_amd64.whl
+  name: wreq
+  version: 0.12.0
+  sha256: a349f93237f29061d4b46e092e4b4f70e9607b5a8de8f9b4493a1236ff4ae869
+  requires_dist:
+  - pytest ; extra == 'bench'
+  - pyperf ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - niquests ; extra == 'bench'
+  - httpx ; extra == 'bench'
+  - requests ; extra == 'bench'
+  - wreq ; extra == 'bench'
+  - curl-cffi ; extra == 'bench'
+  - aiohttp ; extra == 'bench'
+  - pycurl ; extra == 'bench'
+  - uvicorn ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - typing-extensions ; extra == 'bench'
+  - uvloop ; sys_platform != 'win32' and extra == 'bench'
+  - ry ; extra == 'bench'
+  - zensical ; extra == 'docs'
+  - mkdocs-material>=9.5.0 ; extra == 'docs'
+  - mkdocstrings[python]>=1.0.3 ; extra == 'docs'
+  - mike>=2.0.0 ; extra == 'docs'
+  - pytest ; extra == 'test'
+  - pytest-asyncio ; extra == 'test'
+  - pytest-rerunfailures ; extra == 'test'
+  requires_python: '>=3.11'
+- pypi: https://files.pythonhosted.org/packages/fe/c1/1adb13c7e5cbb52fdc21570eada5995a3e94aa1d0c9cb227aeda34bd5fd9/wreq-0.12.0-cp311-abi3-macosx_10_12_x86_64.whl
+  name: wreq
+  version: 0.12.0
+  sha256: 3ffb8454b6d27707354e95d57577cf63f7132e7d3af63675b82510e375d8bfa6
+  requires_dist:
+  - pytest ; extra == 'bench'
+  - pyperf ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - niquests ; extra == 'bench'
+  - httpx ; extra == 'bench'
+  - requests ; extra == 'bench'
+  - wreq ; extra == 'bench'
+  - curl-cffi ; extra == 'bench'
+  - aiohttp ; extra == 'bench'
+  - pycurl ; extra == 'bench'
+  - uvicorn ; extra == 'bench'
+  - starlette ; extra == 'bench'
+  - typing-extensions ; extra == 'bench'
+  - uvloop ; sys_platform != 'win32' and extra == 'bench'
+  - ry ; extra == 'bench'
+  - zensical ; extra == 'docs'
+  - mkdocs-material>=9.5.0 ; extra == 'docs'
+  - mkdocstrings[python]>=1.0.3 ; extra == 'docs'
+  - mike>=2.0.0 ; extra == 'docs'
+  - pytest ; extra == 'test'
+  - pytest-asyncio ; extra == 'test'
+  - pytest-rerunfailures ; extra == 'test'
+  requires_python: '>=3.11'
 - pypi: https://files.pythonhosted.org/packages/a4/f5/10b68b7b1544245097b2a1b8238f66f2fc6dcaeb24ba5d917f52bd2eed4f/wsproto-1.3.2-py3-none-any.whl
   name: wsproto
   version: 1.3.2
