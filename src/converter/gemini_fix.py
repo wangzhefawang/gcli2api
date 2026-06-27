@@ -4,7 +4,6 @@ Gemini Format Utilities - 统一的 Gemini 格式处理和转换工具
 ────────────────────────────────────────────────────────────────
 """
 import json
-from math import e
 from typing import Any, Dict, Optional
 
 from log import log
@@ -299,7 +298,7 @@ def _ensure_empty_tool_schema_for_claude(tools: Any, model_name: str) -> Any:
 
         normalized_tool = tool.copy()
         custom_tool = normalized_tool.get("custom")
-        if isinstance(custom_tool, dict) and "input_schema" not in custom_tool:
+        if isinstance(custom_tool, dict) and not custom_tool.get("input_schema"):
             normalized_custom = custom_tool.copy()
             normalized_custom["input_schema"] = {"type": "object", "properties": {}}
             normalized_tool["custom"] = normalized_custom
@@ -308,26 +307,25 @@ def _ensure_empty_tool_schema_for_claude(tools: Any, model_name: str) -> Any:
         if declarations is None:
             declarations = normalized_tool.get("function_declarations")
         if isinstance(declarations, list):
-            normalized_declarations = []
             for declaration in declarations:
                 if not isinstance(declaration, dict):
-                    normalized_declarations.append(declaration)
+                    normalized_tools.append({"custom": declaration})
                     continue
-                normalized_declaration = declaration.copy()
-                if (
-                    "parametersJsonSchema" not in normalized_declaration
-                    and "parameters_json_schema" in normalized_declaration
-                ):
-                    normalized_declaration["parametersJsonSchema"] = normalized_declaration.pop("parameters_json_schema")
 
-                if "parametersJsonSchema" not in normalized_declaration:
-                    normalized_declaration["parametersJsonSchema"] = {
-                        "type": "object",
-                        "properties": {},
-                    }
-                normalized_declarations.append(normalized_declaration)
-            normalized_tool.pop("function_declarations", None)
-            normalized_tool["functionDeclarations"] = normalized_declarations
+                schema = (
+                    declaration.get("parametersJsonSchema")
+                    or declaration.get("parameters_json_schema")
+                    or declaration.get("parameters")
+                    or {"type": "object", "properties": {}}
+                )
+
+                custom_entry: Dict[str, Any] = {
+                    "name": declaration.get("name", ""),
+                    "description": declaration.get("description", ""),
+                    "input_schema": schema,
+                }
+                normalized_tools.append({"custom": custom_entry})
+            continue
 
         normalized_tools.append(normalized_tool)
 
